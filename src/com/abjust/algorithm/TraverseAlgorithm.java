@@ -13,8 +13,10 @@ public class TraverseAlgorithm {
     public String patternTraverser(int[][] a2dArray,int aSr, int aEr, int aSc, int aEc){
 
         if(aSr>=aEr || aSc>=aEc) //check if the values are not out of 2d array boundaries.
-        {
-            return ANSWER.substring(0, ANSWER.length() - 3); // remove last ", " from the answer.
+        {   
+            String answer = ANSWER.substring(0, ANSWER.length()-2); // remove last ", " from the answer.
+            ANSWER = ""; // clean the global answer string.
+            return answer; 
         }
 
             for(int i = aSr;i<aEc;i++) //determine the top row and add it to the answer string.
@@ -34,14 +36,17 @@ public class TraverseAlgorithm {
                 aEc--;   
             }
 
+            if(aEr-1>aSc) //determine the left column and add it to the answer string.
+            {
                 for(int i=aEc-1;i>=aSc;i--) //determine the bottom row and add it to the answer string.
                 {
                     ANSWER=ANSWER+a2dArray[aEr-1][i]+",";
                 }
                 ANSWER=ANSWER+" ";
                 aEr--;
+            }
 
-            if(aSc<aEc) //determine the left column and add it to the answer string.
+            if(aEr-1>aSc) //determine the left column and add it to the answer string.
             {
                 for(int i=aEr-1 ;i>=aSr;i--)
                 {
