@@ -49,7 +49,7 @@ public class TraverseAlgorithmTest {
         assertEquals(expectedResult,testResult);
     }
 
-        /*
+    /*
      *  The following test verifies the correctness of the algorithm
      *  with 5x4 matrix size.
      */
@@ -68,6 +68,10 @@ public class TraverseAlgorithmTest {
         assertEquals(expectedResult,testResult);
     }
 
+    /*
+     *  The following test verifies the correctness of the algorithm
+     *  with 5x5 matrix size.
+     */
     @Test public void testPatternTraverserFor5x5Matrix() {
         //Arrange 
         int[][] testInput = {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},{21,22,23,24,25}};
